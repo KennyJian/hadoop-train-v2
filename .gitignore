@@ -1,0 +1,9 @@
+/.idea/
+/target/
+/*.iml/
+/.classpath
+/.project
+/.settings
+src/main/webapp/WEB-INF/classes/
+src/main/webapp/WEB-INF/lib/
+src/main/webapp/statics/upload/
