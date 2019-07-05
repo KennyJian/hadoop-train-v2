@@ -148,9 +148,36 @@ public class HDFSApp {
      * 递归列出文件夹下的所有文件
      */
     @Test
-    public void recursion(){
+    public void recursionFileList() throws IOException {
 
+        RemoteIterator<LocatedFileStatus> iterator = fileSystem.listFiles(new Path("/"), true);
+        while (iterator.hasNext()){
+            LocatedFileStatus fileStatus = iterator.next();
+
+            System.out.print(fileStatus.isDirectory() ? "文件夹" : "文件" + "\t");
+            System.out.print(fileStatus.getPermission() + "\t");
+            System.out.print(fileStatus.getReplication() + "\t");
+            System.out.print(fileStatus.getOwner() + "\t");
+            System.out.print(fileStatus.getGroup() + "\t");
+            System.out.println(fileStatus.getPath());
+        }
     }
 
+    /**
+     * 获取文件块信息
+     */
+    @Test
+    public void getFileBlockLocations() throws IOException {
+        FileStatus fileStatus = fileSystem.getFileStatus(new Path("/hdfsapi/test/jdk.tgz"));
 
+        BlockLocation[] blockLocations = fileSystem.getFileBlockLocations(fileStatus, 0 , fileStatus.getLen());
+
+        for (BlockLocation blockLocation : blockLocations) {
+            String[] cachedHosts = blockLocation.getNames();
+            for (String cachedHost : cachedHosts) {
+                System.out.println(cachedHost);
+            }
+
+        }
+    }
 }
