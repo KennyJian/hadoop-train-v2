@@ -1,4 +1,4 @@
-package com.study.bigdata.hadoop.hdfs;
+package hadoop.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
@@ -12,11 +12,11 @@ import java.io.*;
 import java.net.URI;
 
 /**
- * @Author: 黄思佳
- * @Date: 2019/7/5 10:45
  * 根据java操作hadoop的api
+ * @Author: 黄思佳
+ * @Date: 2019/7/5 16:27
  */
-public class HDFSApp {
+public class HDFSTest {
 
     public static final String HDFS_PATH = "hdfs://192.168.147.3:8020";
     Configuration configuration;
