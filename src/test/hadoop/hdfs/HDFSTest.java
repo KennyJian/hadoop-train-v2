@@ -18,7 +18,8 @@ import java.net.URI;
  */
 public class HDFSTest {
 
-    public static final String HDFS_PATH = "hdfs://192.168.147.3:8020";
+//    public static final String HDFS_PATH = "hdfs://192.168.147.3:8020";
+    public static final String HDFS_PATH = "hdfs://192.168.236.3:8020";
     Configuration configuration;
     FileSystem fileSystem;
 
@@ -179,5 +180,10 @@ public class HDFSTest {
             }
 
         }
+    }
+
+    @Test
+    public void deleteFile() throws IOException {
+        System.out.println(fileSystem.delete(new Path("/jdk-8u91-linux-x64.tar.gz"), true));
     }
 }
