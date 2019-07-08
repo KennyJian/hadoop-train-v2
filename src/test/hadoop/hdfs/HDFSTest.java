@@ -182,6 +182,10 @@ public class HDFSTest {
         }
     }
 
+    /**
+     * 删除文件
+     * @throws IOException
+     */
     @Test
     public void deleteFile() throws IOException {
         System.out.println(fileSystem.delete(new Path("/jdk-8u91-linux-x64.tar.gz"), true));
