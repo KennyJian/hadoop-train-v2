@@ -18,8 +18,8 @@ import java.net.URI;
  */
 public class HDFSTest {
 
-//    public static final String HDFS_PATH = "hdfs://192.168.147.3:8020";
-    public static final String HDFS_PATH = "hdfs://192.168.236.3:8020";
+    public static final String HDFS_PATH = "hdfs://192.168.147.3:8020";
+//    public static final String HDFS_PATH = "hdfs://192.168.236.3:8020";
     Configuration configuration;
     FileSystem fileSystem;
 
@@ -69,8 +69,8 @@ public class HDFSTest {
      */
     @Test
     public void create() throws IOException {
-        FSDataOutputStream fsDataOutputStream = fileSystem.create(new Path("/hdfsapi/test/b.txt"));
-        fsDataOutputStream.writeUTF("hello hadoop");
+        FSDataOutputStream fsDataOutputStream = fileSystem.create(new Path("/hdfsapi/test/hello.txt"));
+        fsDataOutputStream.writeUTF("hello  hadoop  hello\nhello    mysql   hello");
         fsDataOutputStream.flush();
         fsDataOutputStream.close();
     }
