@@ -18,8 +18,11 @@ public class WordCountReduce extends Reducer<Text, IntWritable, Text, IntWritabl
         int count = 0;
 
         Iterator<IntWritable> iterator = values.iterator();
-        while (iterator.hasNext()){
-            count++;
+
+        //<1,1,1>
+        while (iterator.hasNext()) {
+            IntWritable value = iterator.next();
+            count += value.get();
         }
 
         context.write(key, new IntWritable(count));
