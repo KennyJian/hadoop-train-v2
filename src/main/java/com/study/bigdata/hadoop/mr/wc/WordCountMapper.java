@@ -8,6 +8,11 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 /**
+ * KEYIN：Map任务读取数据的key类型，offset，是每行数据起始位置的偏移量，Long
+ * VALUEIN：Map任务读取数据的Value类型，其实就是一行行的字符串，String
+ * KEYOUT：Map方法自定义实现输出的key的类型，String
+ * VALUEOUT：Map方法自定义实现输出的valud的类型，Integer
+ *
  * @Author: 黄思佳
  * @Date: 2019/7/22 9:45
  */
