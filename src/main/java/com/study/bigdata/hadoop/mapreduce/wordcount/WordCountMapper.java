@@ -1,4 +1,4 @@
-package com.study.bigdata.hadoop.mr.wc;
+package com.study.bigdata.hadoop.mapreduce.wordcount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
