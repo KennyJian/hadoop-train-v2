@@ -49,6 +49,6 @@ public class AccessLocalApp {
 
         boolean result = job.waitForCompletion(true);
 
-        System.exit(result ? 0 : -1);
+//        System.exit(result ? 0 : -1);
     }
 }
