@@ -17,7 +17,7 @@ import java.io.IOException;
 public class PVStaticApp {
     public static void main(String[] args) throws Exception{
 
-        System.setProperty("hadoop.home.dir", "D:/hadoop-2.6.0-cdh5.15.1");
+        System.setProperty("hadoop.home.dir", "D:/document/hadoop/hadoop-2.6.0-cdh5.15.1");
 
         Configuration configuration = new Configuration();
         Job job = Job.getInstance(configuration);
