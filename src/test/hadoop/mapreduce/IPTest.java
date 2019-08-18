@@ -1,5 +1,6 @@
 package hadoop.mapreduce;
 
+import com.study.bigdata.hadoop.mapreduce.utils.ContentUtils;
 import com.study.bigdata.hadoop.mapreduce.utils.LogParser;
 import com.study.bigdata.hadoop.mapreduce.utils.IPParser;
 import org.junit.After;
@@ -37,5 +38,10 @@ public class IPTest {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
+    }
+
+    @Test
+    public void testContent(){
+        System.out.println(ContentUtils.getPageId("http://www.yihaodian.com/cms/view.do?topicId=19004"));
     }
 }

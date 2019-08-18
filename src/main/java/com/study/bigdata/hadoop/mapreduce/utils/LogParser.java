@@ -14,6 +14,8 @@ public class LogParser {
             String[] items = line.split("\001");
             String ip = items[13];
             map.put("ip", ip);
+            String url = items[1];
+            map.put("url", url);
 
             IPParser ipParser = IPParser.getInstance();
             IPParser.RegionInfo regionInfo = ipParser.analyseIp(ip);
