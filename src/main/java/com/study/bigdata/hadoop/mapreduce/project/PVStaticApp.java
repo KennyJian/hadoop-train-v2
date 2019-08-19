@@ -37,7 +37,7 @@ public class PVStaticApp {
         if (fileSystem.exists(outputPath)){
             fileSystem.delete(outputPath, true);
         }
-        FileInputFormat.setInputPaths(job, new Path("input/raw"));
+        FileInputFormat.setInputPaths(job, new Path("etl"));
         FileOutputFormat.setOutputPath(job, outputPath);
 
         job.waitForCompletion(true);

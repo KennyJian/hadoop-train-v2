@@ -16,6 +16,8 @@ public class LogParser {
             map.put("ip", ip);
             String url = items[1];
             map.put("url", url);
+            String time = items[17];
+            map.put("time", time);
 
             IPParser ipParser = IPParser.getInstance();
             IPParser.RegionInfo regionInfo = ipParser.analyseIp(ip);
@@ -23,7 +25,22 @@ public class LogParser {
                 map.put("country", regionInfo.getCountry());
                 map.put("province", regionInfo.getProvince());
                 map.put("city", regionInfo.getCity());
+            } else {
+                map.put("country", "-");
+                map.put("province", "-");
+                map.put("city", "-");
             }
+        }
+        return map;
+    }
+
+    public Map<String, String> parserV2(String line){
+        Map<String, String> map = new HashMap<>();
+        if (StringUtils.isNotEmpty(line)){
+            String[] items = line.split("\t");
+            map.put("time", items[0]);
+            map.put("province", items[2]);
+            map.put("url", items[3]);
         }
         return map;
     }
