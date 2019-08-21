@@ -38,7 +38,7 @@ public class PageStaticApp {
         if (fileSystem.exists(outputPath)){
             fileSystem.delete(outputPath, true);
         }
-        FileInputFormat.setInputPaths(job, new Path("input/raw"));
+        FileInputFormat.setInputPaths(job, new Path("etl"));
         FileOutputFormat.setOutputPath(job, outputPath);
 
         job.waitForCompletion(true);
@@ -58,10 +58,8 @@ public class PageStaticApp {
 
             LongWritable ONE = new LongWritable(1);
 
-            Map<String, String> map = logParser.parser(value.toString());
-            String url = map.get("url");
-            String pageId = ContentUtils.getPageId(url);
-            context.write(new Text(pageId), ONE);
+            Map<String, String> map = logParser.parserV2(value.toString());
+            context.write(new Text(map.get("pageId")), ONE);
         }
     }
 

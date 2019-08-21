@@ -41,6 +41,7 @@ public class LogParser {
             map.put("time", items[0]);
             map.put("province", items[2]);
             map.put("url", items[3]);
+            map.put("pageId", items[4]);
         }
         return map;
     }

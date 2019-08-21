@@ -44,4 +44,12 @@ public class IPTest {
     public void testContent(){
         System.out.println(ContentUtils.getPageId("http://www.yihaodian.com/cms/view.do?topicId=19004"));
     }
+
+    @Test
+    public void testLogParserV2(){
+        String str = "2013-07-21 12:56:18\t中国\t广东省\tnull\thttp://www.yihaodian.com/item/2017644_1?ref=1_1_51_search.keyword_1?utm_source=iQiyi&utm_medium=UCMJF018&utm_term=&utm_content=Video_15s_pre-roll&utm_campaign=UL_MSP-Jul_Clear_Awareness_China_Display&smt_b=C0B0A0908070605A9FBF00C";
+        String[] arrs = str.split("\t");
+        System.out.println(arrs[5]);
+
+    }
 }
