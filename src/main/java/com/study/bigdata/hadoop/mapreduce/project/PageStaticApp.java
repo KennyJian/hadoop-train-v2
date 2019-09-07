@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class PageStaticApp {
     public static void main(String[] args) throws Exception{
-        System.setProperty("hadoop.home.dir", "D:/document/hadoop/hadoop-2.6.0-cdh5.15.1");
+//        System.setProperty("hadoop.home.dir", "D:/document/hadoop/hadoop-2.6.0-cdh5.15.1");
 
         Configuration configuration = new Configuration();
         Job job = Job.getInstance(configuration);
@@ -34,11 +34,11 @@ public class PageStaticApp {
         job.setOutputValueClass(LongWritable.class);
 
         FileSystem fileSystem = FileSystem.get(configuration);
-        Path outputPath = new Path("output/raw");
+        Path outputPath = new Path(args[1]);
         if (fileSystem.exists(outputPath)){
             fileSystem.delete(outputPath, true);
         }
-        FileInputFormat.setInputPaths(job, new Path("etl"));
+        FileInputFormat.setInputPaths(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, outputPath);
 
         job.waitForCompletion(true);

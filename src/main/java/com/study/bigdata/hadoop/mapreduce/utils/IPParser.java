@@ -5,7 +5,7 @@ public class IPParser extends IPSeeker {
     // 然后在这里指定全路径
     private static final String ipFilePath = "ip/qqwry.dat";
     // 部署在服务器上
-    //private static final String ipFilePath = "/opt/datas/qqwry.dat";
+//    private static final String ipFilePath = "/home/hadoop/data/qqwry.dat";
     private static IPParser obj = new IPParser(ipFilePath);
 
 
